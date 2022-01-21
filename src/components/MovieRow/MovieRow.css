@@ -13,6 +13,7 @@
 
 .movieRow--list {
     white-space: nowrap;
+    transition: all ease 1s;
 }
 
 .movieRow--item {
@@ -29,4 +30,44 @@
 
 .movieRow--item img:hover{
     transform: scale(1);
+}
+
+.movieRow--left,
+.movieRow--right {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    background: rgba(17, 17, 17, .5);
+    transition: all ease .4s;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    opacity: 0;
+    overflow: hidden;
+    cursor: pointer;
+    
+    z-index: 99;
+}
+
+.movieRow--left {
+    left: 0;
+}
+
+.movieRow--right {
+    right: 0;
+}
+
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
+    opacity: 1;
+}
+
+@media (max-width: 760px) {
+    .movieRow--left,
+    .movieRow--right {
+        opacity: 1;
+    }
 }

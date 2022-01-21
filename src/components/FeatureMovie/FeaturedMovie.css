@@ -53,6 +53,7 @@
 
 .featured--buttons {
     margin-top: 15px;
+    white-space: nowrap;
 }
 
 .featured--watchbutton,
@@ -87,4 +88,28 @@
     margin-top: 15px;
     font-size: 18px;
     color: #999;
+}
+
+@media (max-width: 760px) {
+    .featured {
+        height: 90vh;
+    }
+    .featured--name {
+        font-size: 40px;
+    }
+    .featured--info {
+        font-size: 16px;
+    }
+    .featured--description {
+        font-size: 14px;
+        max-width: 80%;
+        text-shadow: 1px 1px 3px #000;
+    }
+    .featured--watchbutton,
+    .featured--mylistbutton {
+        font-size: 16px;
+    }
+    .featured--genres {
+        font-size: 14px;
+    }
 }

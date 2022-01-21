@@ -2,7 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react';
 import Tmdb from './Tmdb';
 import linkedInLogo from './assets/linkedin-logo.png';
-
+import netflixLoading from './assets/netflix_loading_2.gif'
 import {
   Header,
   FeaturedMovie,
@@ -42,7 +42,7 @@ export default () => {
     window.addEventListener('scroll', scrollListener);
 
     return () => {
-      window.removeEventListener('scroll', scrollListener)
+      window.removeEventListener('scroll', scrollListener);
     }
   }, [])
 
@@ -61,13 +61,19 @@ export default () => {
       </section>
 
       <footer>
-        <div className="footer--contact">Meu LinkedIn → <a href="https://www.linkedin.com/in/wesleydiogo/"><img src={linkedInLogo} alt="logo-linkedin"/></a></div>
+        <div className="footer--contact">Meu LinkedIn → <a href="https://www.linkedin.com/in/wesleydiogo/"><img src={linkedInLogo} alt="logo-linkedin" /></a></div>
         <div>
           Feito com <span role="img" aria-label="coração" style={{ color: 'red', fontSize: '22px' }}>♥</span> por Wesley Diogo<br />
           Direitos de imagem para Netflix<br />
           Dados pegos do site TheMovieDB.org
         </div>
       </footer>
+
+      {movieList.length <= 0 &&
+        <div className="loading">
+          <img src={netflixLoading} alt="Carregando" />
+        </div>
+      }
     </div>
   )
 }
